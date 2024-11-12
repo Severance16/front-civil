@@ -1,11 +1,11 @@
-import LoginForm from "@/components/LoginForm";
+
+import LoginContent from "@/components/login/LoginContent";
+import LoginForm from "@/components/login/LoginForm";
 import React from "react";
 import {
   ImageBackground,
   SafeAreaView,
   StyleSheet,
-  Text,
-  View,
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
@@ -14,11 +14,12 @@ export default function signIn() {
     <SafeAreaProvider>
       <SafeAreaView style={styles.conatiner}>
         <ImageBackground
-          source={require("../assets/images/desing.jpg")}
+          source={require("../assets/images/fondo-2.jpg")}
           style={styles.background}
         >
-          <LoginForm />
+          <LoginContent/>
         </ImageBackground>
+        
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -30,8 +31,17 @@ const styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    resizeMode: "cover",
+    resizeMode: "contain",
     justifyContent: "center",
     alignItems: "center",
   },
 });
+
+
+// Colores:
+// #EFAD29
+// #FFFFFF
+// #5B5B5E
+// #262829
+// #F1C16D
+// #034A44
