@@ -1,40 +1,32 @@
-
-import LoginContent from "@/components/login/LoginContent";
 import LoginForm from "@/components/login/LoginForm";
-import React from "react";
-import {
-  ImageBackground,
-  SafeAreaView,
-  StyleSheet,
-} from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import LoginToRegister from "@/components/login/LoginToRegister";
+import { Image, StyleSheet, View } from "react-native";
 
 export default function signIn() {
+  
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.conatiner}>
-        <ImageBackground
-          source={require("../assets/images/fondo-2.jpg")}
-          style={styles.background}
-        >
-          <LoginContent/>
-        </ImageBackground>
-        
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View style={styles.logoContainer}>
+      <Image
+        style={styles.tinyLogo}
+        source={require('../assets/images/logo-gris-oscuro.png')}
+      />
+      <LoginForm />
+      <LoginToRegister/>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  conatiner: {
-    flex: 1,
-  },
-  background: {
-    flex: 1,
-    resizeMode: "contain",
-    justifyContent: "center",
+  logoContainer: {
+    width: "100%",
     alignItems: "center",
+    gap: 20
   },
+  tinyLogo: {
+    width: 180,
+    height: 145,
+  },
+
 });
 
 
